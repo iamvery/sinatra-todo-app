@@ -18,4 +18,17 @@ RSpec.describe "the todo app", type: :feature do
       expect(page).to have_content("task 2")
     end
   end
+
+  describe "task creation" do
+    it "displays created tasks" do
+      visit "/"
+
+      expect(page).not_to have_content("hahahaha task!")
+
+      fill_in "Description", with: "hahahaha task!"
+      click_on "Submit"
+
+      expect(page).to have_content("hahahaha task!")
+    end
+  end
 end
