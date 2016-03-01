@@ -13,4 +13,9 @@ class ToDoApp < Sinatra::Base
     @tasks = Task.all
     erb :index
   end
+
+  post "/" do
+    Task.create(params)
+    redirect "/"
+  end
 end
