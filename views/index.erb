@@ -1,4 +1,6 @@
 <h1>To Do List</h1>
 <ul>
-  <!-- tasks go here! -->
+  <% @tasks.each do |task| %>
+    <li><%= task %></li>
+  <% end %>
 </ul>
